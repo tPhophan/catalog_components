@@ -1,0 +1,29 @@
+.flex_02 {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #f54785;
+}
+
+button.btn_02 {
+    display: inline-block;
+    position: relative;
+    background: none;
+    border: none;
+    font-size: 1rem;
+    color: #fff;
+    cursor: pointer;
+    margin: 20px 30px;
+    background: rgba(0, 0, 0, 0.9);
+}
+
+span.span_02 {
+    display: block;
+    padding: 25px 80px;
+}
+
+button.btn_02::before,
+button.btn_02::after {
+    
+}

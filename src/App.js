@@ -4,10 +4,11 @@ import { Menu, Row, Col } from "antd";
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
-import { RxButton, RxHome } from "react-icons/rx";
+import { RxButton, RxHome, RxReload } from "react-icons/rx";
 
 import HomePage from "./Home";
 import ButtonPage from "./Button";
+import LoadingPage from "./Loading";
 
 function getItem(label, key, icon, children) {
   return {
@@ -40,6 +41,13 @@ export default function App(props) {
         <RxButton />
       </Link>
     ),
+    getItem(
+      "Loading",
+      "/Loading",
+      <Link to={`/Loading`}>
+        <RxReload />
+      </Link>
+    ),
   ];
 
   const onClick = (e) => {
@@ -56,17 +64,14 @@ export default function App(props) {
       >
         <OffCanvasBody
           className="offCanvas"
-          style={{ marginLeft: collapsed ? "95px" : "277px" }}
+          style={{ marginLeft: collapsed ? "95px" : "262px", padding: "10px" }}
         >
-          <Row gutter={[8, 8]} justify="center">
-            <Col xs={24}>
-              <Routes>
-                <Route path="/Home" element={<HomePage />} />
-                <Route path="/Button" element={<ButtonPage />} />
-                <Route path="*" element={<HomePage />} />
-              </Routes>
-            </Col>
-          </Row>
+          <Routes>
+            <Route path="/Home" element={<HomePage />} />
+            <Route path="/Button" element={<ButtonPage />} />
+            <Route path="/Loading" element={<LoadingPage />} />
+            <Route path="*" element={<HomePage />} />
+          </Routes>
         </OffCanvasBody>
 
         <OffCanvasMenu className="offCanvas-body">
