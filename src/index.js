@@ -7,8 +7,8 @@ import App from "./App";
 import "./index.css";
 
 const baseUrl = document.getElementsByTagName("base")[0].getAttribute("href");
-
 const root = ReactDOM.createRoot(document.getElementById("root"));
+
 root.render(
   <BrowserRouter basename={baseUrl}>
     <App />

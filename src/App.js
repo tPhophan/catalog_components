@@ -1,6 +1,6 @@
 import React, { useState } from "react";
 import { Routes, Route, Link } from "react-router-dom";
-import { Menu, Row, Col } from "antd";
+import { Menu } from "antd";
 import { OffCanvas, OffCanvasMenu, OffCanvasBody } from "react-offcanvas";
 
 import { MenuFoldOutlined, MenuUnfoldOutlined } from "@ant-design/icons";
@@ -51,7 +51,7 @@ export default function App(props) {
   ];
 
   const onClick = (e) => {
-    if (e.key == "1") setCollapsed(!collapsed);
+    if (e.key === "1") setCollapsed(!collapsed);
   };
   return (
     <>
